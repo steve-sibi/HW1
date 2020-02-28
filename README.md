@@ -1,2 +1,2 @@
 # Web-App-Sec
-Repo for homework 1
+This repository will contain labs and projects for this class
