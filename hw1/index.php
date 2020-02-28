@@ -14,9 +14,10 @@
 <body>
 <?php
 session_start();
-$_SESSION['userlogin'] = "Loggedin";
 
+$_SESSION['userlogin'] = "Loggedin";
 $usernameErr = $passwordErr = "";
+
 $username = "admin";
 $password = "admin";
 # check to see if git works
