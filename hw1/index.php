@@ -19,7 +19,7 @@ $_SESSION['userlogin'] = "Loggedin";
 $usernameErr = $passwordErr = "";
 $username = "admin";
 $password = "admin";
-
+# check to see if git works
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["username"])) {
         $usernameErr = "username is required";
