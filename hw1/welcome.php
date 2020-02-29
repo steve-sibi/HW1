@@ -13,12 +13,11 @@
 </head>
 
 <body>
-
 <?php
 session_start();
-if (empty($_SESSION['userlogin']) || $_SESSION['userlogin'] = ''){
-    header("Location: index.php");
-    die();
+if(!isset($_SESSION['userlogin']))
+{
+    header('Location:index.php');
 }
 ?>
 <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
@@ -28,6 +27,7 @@ if (empty($_SESSION['userlogin']) || $_SESSION['userlogin'] = ''){
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item" role="presentation"><a class="nav-link active" href="welcome.php">Home</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.php">About Us</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="logout.php">Log Out</a></li>
             </ul>
         </div>    </div>
 </nav>

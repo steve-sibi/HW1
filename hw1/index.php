@@ -13,33 +13,40 @@
 
 <body>
 <?php
-session_start();
 
-$_SESSION['userlogin'] = "Loggedin";
+//session_start();
+
+//$_SESSION['userlogin'] = "Loggedin";
 $usernameErr = $passwordErr = "";
 
 $username = "admin";
 $password = "admin";
 # check to see if git works
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["username"])) {
-        $usernameErr = "username is required";
-    } else {
-        if ($_POST["username"] != $username) {
-            $usernameErr = "Wrong username";
+    if (isset($_POST['username']))
+    {
+        session_start();
+        $_SESSION['userlogin'] = $_POST['username'];
+        header('Location: welcome.php');
+    }
+    else{
+        if (empty($_POST["username"])) {
+            $usernameErr = "username is required";
         } else {
-            if (empty($_POST["password"])) {
-                $passwordErr = "password is required";
+            if ($_POST["username"] != $username) {
+                $usernameErr = "Wrong username";
             } else {
-                if ($_POST["password"] != $password) {
-                    $passwordErr = "Wrong password";
-                }
-                else{
-                    header("location: welcome.php");
+                if (empty($_POST["password"])) {
+                    $passwordErr = "password is required";
+                } else {
+                    if ($_POST["password"] != $password) {
+                        $passwordErr = "Wrong password";
+                    }
                 }
             }
         }
     }
+
 }
 
 ?>
