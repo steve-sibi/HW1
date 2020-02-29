@@ -13,15 +13,13 @@
 
 <body>
 <?php
+session_start();
 
-//session_start();
-//
-//$_SESSION['userlogin'] = "Loggedin";
 $usernameErr = $passwordErr = "";
 
 $username = "admin";
 $password = "admin";
-# check to see if git works
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //    session_start();
     if (empty($_POST["username"])) {
@@ -42,8 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     }
-
-
 }
 
 ?>

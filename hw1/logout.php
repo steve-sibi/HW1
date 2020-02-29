@@ -1,6 +1,9 @@
 <?php
+session_start();
 if(isset($_SESSION['userlogin']))
 {
     unset($_SESSION['userlogin']);
+    header("Location: index.php");
+    die();
 }
-header("Location: index.php");
+
