@@ -13,28 +13,36 @@
 
 <body>
 <?php
-session_start();
 
 $usernameErr = $passwordErr = "";
 
-$username = "admin";
-$password = "admin";
+$username = "admin";    // username
+$password = "admin";    // password
 
+/*
+ * once  submit is clicked, will send a post request and check the following
+ * if conditions before redirection to landing page.
+ */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//    session_start();
+    session_start();    // Start a new session after submitting
+    // error message if username field is empty
     if (empty($_POST["username"])) {
         $usernameErr = "username is required";
     } else {
+        // error if user inputs wrong username
         if ($_POST["username"] != $username) {
             $usernameErr = "Wrong username";
         } else {
+            // error message if password field is empty
             if (empty($_POST["password"])) {
                 $passwordErr = "password is required";
             } else {
+                // error is password input is wrong
                 if ($_POST["password"] != $password) {
                     $passwordErr = "Wrong password";
                 } else {
-                    $_SESSION['userlogin'] = "Loggedin";
+                    // if no errors, provide session ID and redirect to landing page
+                    $_SESSION['userlogin'] = "Loggedin";    // provides user with a session ID called 'Logged in'
                     header('Location: welcome.php');
                 }
             }

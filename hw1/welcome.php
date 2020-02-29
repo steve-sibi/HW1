@@ -14,7 +14,9 @@
 
 <body>
 <?php
-session_start();
+session_start();    // resume existing session
+// if no session ID is found, redirect to login page.
+// Prevents access of landing page if user has not logged in
 if(!isset($_SESSION['userlogin']))
 {
     header('Location:index.php');
