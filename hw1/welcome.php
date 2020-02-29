@@ -27,7 +27,7 @@ if (empty($_SESSION['userlogin']) || $_SESSION['userlogin'] = ''){
              id="navcol-1">
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item" role="presentation"><a class="nav-link active" href="welcome.php">Home</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About Us</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.php">About Us</a></li>
             </ul>
         </div>    </div>
 </nav>
